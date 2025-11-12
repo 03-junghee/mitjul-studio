@@ -114,7 +114,6 @@ priority==2.0.0
 protobuf==5.26.1
 psutil==6.0.0
 pyarrow==17.0.0
-Pybag==2.2.10
 pycparser==2.22
 pycryptodome==3.21.0
 pydantic==2.7.1
