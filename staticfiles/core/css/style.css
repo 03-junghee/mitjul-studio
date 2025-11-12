@@ -1,0 +1,106 @@
+/* --- GLOBAL STYLES (From base.html) --- */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fcf6e9; /* 옅은 크림색 배경 */
+    color: #36454f; /* 짙은 숯색 텍스트 */
+    text-align: center;
+}
+header {
+    padding: 20px;
+    border-bottom: 1px solid #d4c2a8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #36454f;
+}
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #36454f;
+    transition: color 0.3s;
+}
+nav a:hover {
+    color: #a89476; /* 호버 시 강조색 */
+}
+.content {
+    min-height: 80vh;
+    padding: 50px 0;
+}
+
+/* Footer Styles (From base.html) */
+footer { 
+    padding: 50px 0;
+    border-top: 1px solid #d4c2a8;
+    font-size: 14px; 
+    clear: both; 
+    text-align: left;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.footer-column h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #36454F;
+}
+.footer-column a {
+    display: block;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: #36454F;
+    font-size: 13px;
+}
+.footer-info {
+    line-height: 1.6;
+    font-size: 13px;
+}
+.copyright {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #d4c2a8;
+    font-size: 12px;
+}
+
+/* --- PAGE SPECIFIC STYLES (From index.html) --- */
+
+.main-slogan {
+    font-size: 3.5em; 
+    font-family: "serif";
+    color: #a89476; 
+    margin-bottom: 10px;
+}
+.sub-text {
+    font-size: 1.1em;
+    color: #36454f;
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+.story-link {
+    display: inline-block;
+    padding: 12px 35px;
+    margin-top: 30px;
+    border: 1px solid #a89476;
+    color: #a89476;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+.story-link:hover {
+    background-color: #a89476;
+    color: #fcf6e9;
+}

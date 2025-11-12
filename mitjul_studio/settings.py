@@ -130,6 +130,11 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles' # 정적 파일을 모을 최종 디렉토리
 
+# core/static 폴더를 찾도록 명시
+STATICFILES_DIRS = [
+    BASE_DIR / "core/static",
+]
+
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # 💡 Render에서 미디어 파일(이미지 등) 경로를 설정할 경우를 대비하여 추가
