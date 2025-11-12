@@ -1,0 +1,1 @@
+web: gunicorn mitjul_studio.wsgi:application

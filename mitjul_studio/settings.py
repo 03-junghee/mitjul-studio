@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-anb@-maqdx8olmr1t5(mz7dq)vg*=nd2w8ffed24&2yn7&fc^m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mitjul-studio.onrender.com', 'www.당신의도메인.com', '당신의도메인.com']
 
 
 # Application definition
@@ -121,8 +121,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles' # 정적 파일을 모을 최종 디렉토리
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# 💡 Render에서 미디어 파일(이미지 등) 경로를 설정할 경우를 대비하여 추가
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
