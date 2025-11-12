@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.mo
+*.pot
+*.log
+*.sqlite3 # SQLite 데이터베이스
+
+# C extensions
+*.so
+
+# Packages
+.env
+venv/
+env/
+/site/
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+/media
+/static
+
+# Python Environment
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDE Specific
+.vscode/
+.idea/

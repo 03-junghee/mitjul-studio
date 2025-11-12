@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>밑줄 스튜디오 | {% block title %}{% endblock %}</title>
+    
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    
+  </head>
+  <body>      <header>
+        <a href="{% url 'core:index' %}" class="logo">MITJUL-STUDIO</a>
+        <nav>
+            <a href="{% url 'core:story' %}">STORY</a>
+            <a href="{% url 'core:about_us' %}">ABOUT US</a>
+            <a href="{% url 'core:projects' %}">PROJECTS</a>
+            <a href="{% url 'core:contact' %}">CONTACT</a>
+        </nav>
+    </header>
+
+    <div class="content">{% block content %}{% endblock %}</div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column" style="width: 30%;">
+                <h4 style="font-size: 20px;">MITJUL-STUDIO</h4>
+                <div class="footer-info">
+                    <p>밑줄 스튜디오 | CEO Anna Kim</p>
+                    <p>서울시 강남구 기록대로 123-45</p>
+                    <p>Tel: 02-1234-5678 | Email: contact@mitjul-studio.com</p>
+                </div>
+            </div>
+            <div class="footer-column" style="width: 20%;">
+                <h4>LINK</h4>
+                <a href="{% url 'core:story' %}">STORY</a>
+                <a href="{% url 'core:about_us' %}">ABOUT US</a>
+            </div>
+            <div class="footer-column" style="width: 20%;">
+                <h4>PROJECTS</h4>
+                <a href="{% url 'core:projects' %}">현황</a>
+                <a href="{% url 'core:suggestion' %}">아이디어 제안</a>
+                <a href="{% url 'core:contact' %}">문의</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 Mitjul Studio. All rights reserved.</p>
+        </div>
+    </footer>
+  </body> 
+</html> 

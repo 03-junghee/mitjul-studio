@@ -1,0 +1,17 @@
+{% extends "core/base.html" %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<div style="padding: 50px 0;">
+    <h1 style="font-size: 3em; color: #36454F; margin-bottom: 80px;">회사 소개 (About Us)</h1>
+    
+    <div style="width: 60%; margin: 0 auto; padding: 40px; border: 1px solid #d4c2a8;">
+        <p style="font-size: 1.2em; line-height: 1.8; color: #36454F;">
+            {{ quote|linebreaksbr }} </p>
+        <p style="margin-top: 30px; font-weight: bold; color: #a89476;">
+            {{ ceo }}
+        </p>
+    </div>
+</div>
+{% endblock %}

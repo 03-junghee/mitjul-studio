@@ -1,0 +1,12 @@
+{% extends "core/base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1 class="main-slogan">{{ slogan }}</h1>
+    <p class="sub-text">{{ sub_text }}</p>
+
+    <a href="{% url 'core:story' %}" class="story-link">
+        스튜디오의 철학 살펴보기
+    </a>
+{% endblock %}
