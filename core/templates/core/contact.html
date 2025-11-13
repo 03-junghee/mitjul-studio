@@ -1,59 +1,59 @@
-{% extends "core/base.html" %} {% block title %}문의 및 제휴{% endblock %} 
-{%block content %}
-<div
-  class="contact-layout"
-  style="display: flex; justify-content: center; width: 80%; margin: 0 auto"
->
-  <div style="width: 50%; padding-right: 30px">
-    <h2 style="text-align: center; color: #36454f">일반 문의</h2>
+{% extends "core/base.html" %}
 
-    <form
-      method="post"
-      action="{% url 'core:contact' %}"
-      style="padding: 20px; border: 1px solid #d4c2a8"
-    >
-      {% csrf_token %} {% for field in form %}
-      <div class="form-field" style="margin-bottom: 15px">
-        <label
-          for="{{ field.id_for_label }}"
-          style="display: block; font-weight: bold; margin-bottom: 5px"
-          >{{ field.label }}</label
-        >
-        {{ field }} {% for error in field.errors %}
-        <p style="color: red">{{ error }}</p>
-        {% endfor %}
-      </div>
-      {% endfor %}
+{% block title %}Contact{% endblock %}
 
-      <button
-        type="submit"
-        style="
-          background-color: #a89476;
-          color: white;
-          padding: 10px 20px;
-          border: none;
-          cursor: pointer;
-          margin-top: 20px;
-          width: 100%;
-        "
-      >
-        문의 제출하기
-      </button>
-    </form>
-  </div>
+{% block content %}
+    <div class="contact-container">
+        
+        <h2 class="contact-page-title">Contact</h2>
+        <hr class="contact-divider">
 
-  <div
-    style="
-      width: 30%;
-      padding: 20px;
-      border-left: 1px solid #d4c2a8;
-      text-align: left;
-    "
-  >
-    <h3 style="color: #36454f">연락처 정보</h3>
-    <p><strong>본사 주소:</strong> 서울시 강남구 기록대로 123-45</p>
-    <p><strong>대표 전화:</strong> 02-1234-5678 (평일 10시~18시)</p>
-    <p><strong>이메일 문의:</strong> contact@mitjul-studio.com</p>
-  </div>
-</div>
-{% endblock %}
+        <div class="contact-grid">
+            
+            <div class="contact-form-section">
+                <h3 class="form-title">일반 문의</h3>
+                
+                <form action="{% url 'core:contact' %}" method="post" class="contact-form">
+                    {% csrf_token %}
+                    
+                    <div class="form-group">
+                        <label for="id_name">이름 *</label>
+                        <input type="text" id="id_name" name="name" required placeholder="홍길동" class="contact-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="id_email">이메일 *</label>
+                        <input type="email" id="id_email" name="email" required placeholder="example@studio.com" class="contact-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="id_subject">제목 *</label>
+                        <input type="text" id="id_subject" name="subject" required class="contact-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="id_message">문의 내용 *</label>
+                        <textarea id="id_message" name="message" required rows="6" class="contact-textarea"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="contact-submit-btn">문의 제출하기</button>
+                </form>
+            </div>
+            
+            <div class="contact-info-section">
+                <h3 class="info-title">연락처 정보</h3>
+                <div class="info-details">
+                    <p class="info-item">
+                        <strong>본사 주소:</strong> <br> 서울시 강남구 기록대로 123-45
+                    </p>
+                    <p class="info-item">
+                        <strong>대표 전화:</strong> <br> 02-1234-5678 (평일 10시~18시)
+                    </p>
+                    <p class="info-item">
+                        <strong>이메일 문의:</strong> <br> contact@mitjul-studio.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

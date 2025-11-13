@@ -1,0 +1,44 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Product{% endblock %}
+
+{% block content %}
+    <div class="product-container">
+        
+        <h2 class="product-page-title">PRODUCT LINEUP</h2>
+        <p class="product-page-subtitle">밑줄 스튜디오가 선별한 영감을 기록하는 도구들입니다.</p>
+
+        <div class="product-grid">
+            
+            {% for product in products %}
+                <div class="product-card">
+                    
+                    <div class="product-image-wrapper">
+                        {# 클릭 이벤트를 위해 클래스와 data 속성 추가 #}
+                        <img src="{% static 'core/img/' %}{{ product.image_name }}" 
+                             alt="{{ product.name }} 이미지" 
+                             class="product-image clickable-image" 
+                             data-fullsize-src="{% static 'core/img/' %}{{ product.image_name }}"
+                             data-product-name="{{ product.name }}">
+                        {% if product.tag %}
+                            <span class="product-tag">{{ product.tag }}</span>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="product-info">
+                        <h3 class="product-name">{{ product.name }}</h3>
+                        <p class="product-slogan">{{ product.slogan }}</p>
+                        <p class="product-price">{{ product.price }}</p>
+                        
+                        <a href="{% url 'core:product_detail' product_slug=product.slug %}" 
+                           class="product-detail-btn">
+                            자세히 보기
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock content %}

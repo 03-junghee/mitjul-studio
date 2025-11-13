@@ -1,8 +1,11 @@
 {% extends "core/base.html" %}
-
-{% block title %}Home{% endblock %}
+{% load static %} {% block title %}Home{% endblock %}
 
 {% block content %}
+    <div class="main-logo-container">
+        <img src="{% static 'core/img/logo.png' %}" alt="밑줄 스튜디오 로고" class="main-logo-img">
+    </div>
+    
     <h1 class="main-slogan">{{ slogan }}</h1>
     <p class="sub-text">{{ sub_text }}</p>
 

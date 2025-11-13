@@ -1,51 +1,43 @@
-{% extends "core/base.html" %} {% block title %}다음 밑줄 제안{% endblock %}
-{%block content %}
-<div
-  class="form-container"
-  style="width: 50%; margin: 0 auto; padding: 40px; text-align: left"
->
-  <h2 style="text-align: center; color: #36454f">다음 밑줄을 제안해 주세요</h2>
-  <p style="text-align: center; margin-bottom: 30px">
-    당신의 밑줄이 다음 컬렉션의 영감이 됩니다. 문장과 아이디어를 자유롭게 기록해
-    주세요.
-  </p>
+{% extends "core/base.html" %}
 
-  <form
-    method="post"
-    action="{% url 'core:suggestion' %}"
-    style="padding: 20px; border: 1px solid #d4c2a8"
-  >
-    {% csrf_token %} {% for field in form %}
-    <div class="form-field" style="margin-bottom: 15px">
-      <label
-        for="{{ field.id_for_label }}"
-        style="display: block; font-weight: bold; margin-bottom: 5px"
-        >{{ field.label }}</label
-      >
-      {{ field }} {% if field.help_text %}
-      <small style="color: #6c757d; display: block; margin-top: 3px"
-        >{{ field.help_text }}</small
-      >
-      {% endif %} {% for error in field.errors %}
-      <p style="color: red">{{ error }}</p>
-      {% endfor %}
+{% load static %}  {% block title %}Idea Suggestion{% endblock %}
+
+{% block content %}
+    <div class="suggestion-container">
+        
+        <h2 class="suggestion-title">다음 밑줄을 제안해 주세요</h2>
+        <p class="suggestion-subtitle">
+            당신의 아이디어가 다음 컬렉션의 영감이 됩니다. 아래 가이드를 참고하여 파일을 제출해 주세요.
+        </p>
+        
+        <div class="suggestion-guide">
+            <h3 class="guide-heading">제안 가이드라인</h3>
+            <ul class="guide-list">
+                <li><span class="guide-bullet">1.</span> 지원서 양식을 다운로드하여 작성합니다. (제안하는 문장, 출처, 굿즈 아이디어 포함)</li>
+                <li><span class="guide-bullet">2.</span> 제안하는 문장 및 아이디어가 밑줄 스튜디오의 콘셉트와 일치하는지 확인해 주세요.</li>
+                <li><span class="guide-bullet">3.</span> 완성된 지원서를 아래 '파일 제출' 영역에 업로드합니다.</li>
+            </ul>
+        </div>
+
+        <div class="download-section">
+            <a href="{% static 'core/files/suggestion_form.docx' %}" class="download-btn" download>
+                지원서 양식 다운로드 (.docx)
+            </a>
+        </div>
+        
+        <div class="upload-section">
+            <h3 class="upload-heading">파일 제출</h3>
+            
+            <form action="{% url 'core:suggestion' %}" method="post" enctype="multipart/form-data" class="upload-form">
+                {% csrf_token %}
+                
+                <div class="file-drop-area">
+                    <input type="file" id="id_suggestion_file" name="suggestion_file" required class="file-input">
+                    <p class="file-label">파일을 드래그하거나 클릭하여 업로드하세요 (PDF, DOCX)</p>
+                </div>
+
+                <button type="submit" class="submit-btn">제출하기</button>
+            </form>
+        </div>
     </div>
-    {% endfor %}
-
-    <button
-      type="submit"
-      style="
-        background-color: #a89476;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-        margin-top: 20px;
-        width: 100%;
-      "
-    >
-      제안 제출하기
-    </button>
-  </form>
-</div>
-{% endblock %}
+{% endblock content %}

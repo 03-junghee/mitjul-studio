@@ -1,0 +1,42 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Product Detail - {{ product.name }}{% endblock %} 
+{% block content %}
+    <div class="product-detail-container">
+        
+        <div class="detail-grid">
+            
+            <div class="detail-image-section">
+                <img src="{% static 'core/img/' %}{{ product.image_name }}" 
+                     alt="{{ product.name }} 이미지" 
+                     class="detail-main-image">
+            </div>
+
+            <div class="detail-info-section">
+                <h1 class="detail-name">{{ product.name }}</h1>
+                <p class="detail-price">{{ product.price }}</p>
+                
+                <hr class="info-divider">
+
+                <div class="detail-description-box">
+                    <p class="detail-desc-title">상품 설명</p>
+                    <p class="detail-desc">{{ product.description }}</p>
+                    
+                    <ul class="detail-features">
+                        {% for feature in product.features %}
+                            <li>{{ feature }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <button class="buy-now-btn">구매하기</button>
+                <a href="{% url 'core:product' %}" class="back-to-list-btn">
+                    ← 상품 목록으로 돌아가기
+                </a>
+            </div>
+            
+        </div>
+        
+    </div>
+{% endblock content %}
