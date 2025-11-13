@@ -199,3 +199,4 @@ xmod==1.8.1
 xxhash==3.5.0
 yarl==1.9.4
 whitenoise==6.6.0
+dj-database-url
