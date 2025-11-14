@@ -1269,3 +1269,44 @@ body.lightbox-open {
         grid-template-columns: 1fr;
     }
 }
+.main-title {
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: 700;
+    /* 🚨 [수정] 크기를 키워 시원하게 */
+    font-size: 48px; 
+    /* 🚨 [수정] 짙은 색상으로 대비 강화 (현재 배경색 대비) */
+    color: #4A4035; 
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.main-copy {
+    font-family: 'Noto Sans KR', sans-serif; /* 명확한 산세리프 폰트 */
+    font-weight: 300;
+    font-size: 16px;
+    /* 🚨 [수정] 색상을 진하게 하여 가독성 확보 */
+    color: #6D5E4D; 
+    line-height: 1.5;
+    margin-bottom: 50px;
+}
+.main-button {
+    /* 기존 스타일 유지하면서 가독성 높이는 배경색 사용 */
+    display: inline-block;
+    padding: 12px 30px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    
+    /* 🚨 [수정] 버튼 배경색을 짙게 변경하여 텍스트 대비 향상 */
+    background-color: #C4B097; 
+    color: #FFFFFF; /* 텍스트는 흰색으로 유지 */
+    
+    border: 1px solid #C4B097;
+    transition: all 0.3s ease;
+    margin-top: 20px; /* 위쪽 여백 추가 */
+}
+
+.main-button:hover {
+    background-color: #6D5E4D; /* 호버 색상 */
+    border-color: #6D5E4D;
+}
